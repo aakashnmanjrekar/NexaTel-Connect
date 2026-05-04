@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexaTel Connect</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f7f8fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #5b21b6;
+      color: white;
+      padding: 22px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      background: linear-gradient(135deg, #6d28d9, #db2777);
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+      padding: 30px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #6d28d9;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    main {
+      padding: 56px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: #4b5563;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .card h3 {
+      color: #6d28d9;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      margin: 12px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f3e8ff;
+      color: #6d28d9;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .features {
+      margin-top: 14px;
+      padding-left: 18px;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+    }
+
+    .support {
+      margin-top: 56px;
+      background: white;
+      padding: 38px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .support h2 {
+      color: #111827;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 48px;
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">NexaTel Connect</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#fiber">Fiber</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Fast network. Simple plans. Always connected.</h1>
+      <p>Experience reliable 5G mobile services, high-speed fiber broadband, and instant customer support with NexaTel Connect.</p>
+      <a class="button" href="#mobile">Explore Plans</a>
+    </div>
+
+    <div class="hero-card">
+      <span class="tag">New Launch Offer</span>
+      <h2>Unlimited 5G Data</h2>
+      <p>Starting at ₹299/month with unlimited calls, daily data, SMS, and entertainment benefits.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="mobile">
+      <h2 class="section-title">Mobile Plans</h2>
+      <p class="section-subtitle">Choose from prepaid, postpaid, and family plans designed for everyday connectivity.</p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Prepaid</span>
+          <h3>Starter 5G</h3>
+          <div class="price">₹299</div>
+          <p>Perfect for daily browsing, calls, and messaging.</p>
+          <ul class="features">
+            <li>1.5 GB/day data</li>
+            <li>Unlimited voice calls</li>
+            <li>100 SMS/day</li>
+            <li>28 days validity</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag">Popular</span>
+          <h3>Unlimited Plus</h3>
+          <div class="price">₹599</div>
+          <p>More data and entertainment benefits for power users.</p>
+          <ul class="features">
+            <li>Unlimited 5G data</li>
+            <li>OTT entertainment pack</li>
+            <li>Unlimited calls</li>
+            <li>56 days validity</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag">Postpaid</span>
+          <h3>Family Connect</h3>
+          <div class="price">₹999</div>
+          <p>One simple bill for the whole family.</p>
+          <ul class="features">
+            <li>3 family connections</li>
+            <li>200 GB shared data</li>
+            <li>International roaming add-ons</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="fiber" class="support">
+      <h2>NexaFiber Broadband</h2>
+      <p>Enjoy high-speed home internet with plans up to 1 Gbps, free router installation, and 24/7 service support.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>100 Mbps</h3>
+          <div class="price">₹499</div>
+          <p>Ideal for browsing, video calls, and streaming.</p>
+        </div>
+        <div class="card">
+          <h3>300 Mbps</h3>
+          <div class="price">₹799</div>
+          <p>Great for families, gaming, and 4K streaming.</p>
+        </div>
+        <div class="card">
+          <h3>1 Gbps</h3>
+          <div class="price">₹1499</div>
+          <p>Ultra-fast speeds for smart homes and heavy usage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="support">
+      <h2>Need Help?</h2>
+      <p>Recharge, check network coverage, raise a service request, or chat with our support assistant.</p>
+      <br />
+      <a class="button" href="#">Start Support</a>
+    </section>
+
+    <section id="about" class="support">
+      <h2>About NexaTel Connect</h2>
+      <p>NexaTel Connect is a demo telecom provider website created for showcasing Sprinklr Live Chat experiences.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 NexaTel Connect. Demo website for live chat showcase.</p>
+  </footer>
+
+  <!-- Paste your Sprinklr Live Chat embed script below this line -->
+  <!-- Example:
+  <script>
+    // Your Sprinklr embed code goes here
+  </script>
+  -->
+</body>
+</html>
