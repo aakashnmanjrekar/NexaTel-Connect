@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NexaTel Connect</title>
+  <title>NexaTel Connect – Support</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,15 +13,16 @@
     }
 
     body {
-      background: #f7f8fc;
+      background: #f4f5f9;
       color: #1f2937;
       line-height: 1.6;
     }
 
+    /* ── Header ── */
     header {
       background: #5b21b6;
       color: white;
-      padding: 22px 8%;
+      padding: 18px 8%;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -36,7 +37,7 @@
     }
 
     .logo {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: 0.3px;
     }
@@ -44,152 +45,236 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 24px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: white;
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
+      font-size: 14px;
       font-weight: 600;
     }
 
-    .hero {
-      padding: 90px 8%;
-      background: linear-gradient(135deg, #6d28d9, #db2777);
+    .nav-links a.active {
       color: white;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 36px;
-      align-items: center;
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: #6d28d9;
+      padding: 48px 8% 40px;
+      color: white;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 18px;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
     }
 
     .hero p {
-      font-size: 20px;
-      max-width: 640px;
-      margin-bottom: 28px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      line-height: 1.6;
     }
 
-    .hero-card {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 24px;
-      padding: 30px;
-      backdrop-filter: blur(8px);
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 4px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: white;
+      margin-top: 18px;
     }
 
-    .hero-card h2 {
-      font-size: 34px;
-      margin-bottom: 10px;
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      flex-shrink: 0;
     }
 
-    .button {
-      display: inline-block;
-      background: white;
-      color: #6d28d9;
-      padding: 14px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
+    /* ── Main content ── */
     main {
-      padding: 56px 8%;
+      padding: 36px 8% 56px;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 30px;
-      color: #4b5563;
-      font-size: 18px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    .card h3 {
-      color: #6d28d9;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .price {
-      font-size: 32px;
-      font-weight: 800;
-      color: #111827;
-      margin: 12px 0;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #f3e8ff;
-      color: #6d28d9;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
+    .section-label {
+      font-size: 11px;
       font-weight: 700;
-      margin-bottom: 12px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      margin-bottom: 16px;
     }
 
-    .features {
-      margin-top: 14px;
-      padding-left: 18px;
+    /* ── Support tiles ── */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 40px;
     }
 
-    .features li {
+    .tile {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .tile:hover {
+      border-color: #6d28d9;
+      box-shadow: 0 4px 14px rgba(109, 40, 217, 0.08);
+    }
+
+    .tile-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tile h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .tile p {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 32px 0;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      max-width: 760px;
       margin-bottom: 8px;
     }
 
-    .support {
-      margin-top: 56px;
-      background: white;
-      padding: 38px;
-      border-radius: 22px;
-      text-align: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    .faq-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+      align-items: flex-start;
     }
 
-    .support h2 {
+    .faq-arrow {
+      color: #6d28d9;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .faq-item h4 {
+      font-size: 14px;
+      font-weight: 700;
       color: #111827;
-      font-size: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
 
+    .faq-item p {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.55;
+    }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .contact-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #6d28d9;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .contact-card .hours {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    /* ── Footer ── */
     footer {
-      margin-top: 48px;
       background: #111827;
       color: white;
-      text-align: center;
-      padding: 24px;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255,255,255,0.75);
     }
   </style>
 </head>
 <body>
+
   <header>
     <nav>
       <div class="logo">NexaTel Connect</div>
@@ -197,110 +282,136 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#mobile">Mobile</a></li>
         <li><a href="#fiber">Fiber</a></li>
-        <li><a href="#support">Support</a></li>
+        <li><a href="#support" class="active">Support</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <div>
-      <h1>Fast network. Simple plans. Always connected.</h1>
-      <p>Experience reliable 5G mobile services, high-speed fiber broadband, and instant customer support with NexaTel Connect.</p>
-      <a class="button" href="#mobile">Explore Plans</a>
-    </div>
-
-    <div class="hero-card">
-      <span class="tag">New Launch Offer</span>
-      <h2>Unlimited 5G Data</h2>
-      <p>Starting at ₹299/month with unlimited calls, daily data, SMS, and entertainment benefits.</p>
+  <section class="hero">
+    <h1>Support Centre</h1>
+    <p>We're here to help with billing, network, and account questions — 24 hours a day, 7 days a week.</p>
+    <div class="status-pill">
+      <div class="status-dot"></div>
+      All systems operational &mdash; no reported outages
     </div>
   </section>
 
   <main>
-    <section id="mobile">
-      <h2 class="section-title">Mobile Plans</h2>
-      <p class="section-subtitle">Choose from prepaid, postpaid, and family plans designed for everyday connectivity.</p>
 
-      <div class="cards">
-        <div class="card">
-          <span class="tag">Prepaid</span>
-          <h3>Starter 5G</h3>
-          <div class="price">₹299</div>
-          <p>Perfect for daily browsing, calls, and messaging.</p>
-          <ul class="features">
-            <li>1.5 GB/day data</li>
-            <li>Unlimited voice calls</li>
-            <li>100 SMS/day</li>
-            <li>28 days validity</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">Popular</span>
-          <h3>Unlimited Plus</h3>
-          <div class="price">₹599</div>
-          <p>More data and entertainment benefits for power users.</p>
-          <ul class="features">
-            <li>Unlimited 5G data</li>
-            <li>OTT entertainment pack</li>
-            <li>Unlimited calls</li>
-            <li>56 days validity</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="tag">Postpaid</span>
-          <h3>Family Connect</h3>
-          <div class="price">₹999</div>
-          <p>One simple bill for the whole family.</p>
-          <ul class="features">
-            <li>3 family connections</li>
-            <li>200 GB shared data</li>
-            <li>International roaming add-ons</li>
-            <li>Priority support</li>
-          </ul>
+    <div class="section-label">How can we help?</div>
+    <div class="tiles">
+      <div class="tile">
+        <div class="tile-icon">🧾</div>
+        <div>
+          <h3>Billing &amp; Invoices</h3>
+          <p>View your invoice, understand a charge, or query a payment on your account.</p>
         </div>
       </div>
-    </section>
-
-    <section id="fiber" class="support">
-      <h2>NexaFiber Broadband</h2>
-      <p>Enjoy high-speed home internet with plans up to 1 Gbps, free router installation, and 24/7 service support.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>100 Mbps</h3>
-          <div class="price">₹499</div>
-          <p>Ideal for browsing, video calls, and streaming.</p>
-        </div>
-        <div class="card">
-          <h3>300 Mbps</h3>
-          <div class="price">₹799</div>
-          <p>Great for families, gaming, and 4K streaming.</p>
-        </div>
-        <div class="card">
-          <h3>1 Gbps</h3>
-          <div class="price">₹1499</div>
-          <p>Ultra-fast speeds for smart homes and heavy usage.</p>
+      <div class="tile">
+        <div class="tile-icon">📶</div>
+        <div>
+          <h3>Network Coverage</h3>
+          <p>Check 5G availability in your area or report a service disruption.</p>
         </div>
       </div>
-    </section>
+      <div class="tile">
+        <div class="tile-icon">📋</div>
+        <div>
+          <h3>Raise a Request</h3>
+          <p>Log a complaint, request a SIM replacement, or track an open case.</p>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile-icon">🔒</div>
+        <div>
+          <h3>Account &amp; Security</h3>
+          <p>Update your details, reset your password, or report suspicious activity.</p>
+        </div>
+      </div>
+    </div>
 
-    <section id="support" class="support">
-      <h2>Need Help?</h2>
-      <p>Recharge, check network coverage, raise a service request, or chat with our support assistant.</p>
-      <br />
-      <a class="button" href="#">Start Support</a>
-    </section>
+    <div class="divider"></div>
 
-    <section id="about" class="support">
-      <h2>About NexaTel Connect</h2>
-      <p>NexaTel Connect is a demo telecom provider website created for showcasing Sprinklr Live Chat experiences.</p>
-    </section>
+    <div class="section-label">Frequently asked questions</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-arrow">›</div>
+        <div>
+          <h4>When is my monthly payment due?</h4>
+          <p>Your invoice is generated on the 1st of each month and payment is due within 14 days. You'll receive a reminder by SMS and email before the due date.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-arrow">›</div>
+        <div>
+          <h4>What happens if I exceed my data limit?</h4>
+          <p>Once you reach your monthly data allowance, additional data is charged at your plan's standard overage rate. You can top up anytime from your account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-arrow">›</div>
+        <div>
+          <h4>How do I change or upgrade my plan?</h4>
+          <p>Plan changes take effect from your next billing cycle. Contact us and we'll walk you through the available options for your account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-arrow">›</div>
+        <div>
+          <h4>What should I do if I lose my SIM card?</h4>
+          <p>Report a lost or stolen SIM immediately so we can block it and protect your account. A replacement SIM will be dispatched within 2–3 business days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-arrow">›</div>
+        <div>
+          <h4>Are there charges for calls made abroad?</h4>
+          <p>International and roaming charges vary by destination and are billed separately from your standard monthly plan. Check your plan details for applicable rates.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Other ways to reach us</div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h4>📞 Customer Care</h4>
+        <p>0800 639 200</p>
+        <p class="hours">Mon – Fri, 8am – 8pm</p>
+      </div>
+
+      <div class="contact-card">
+        <h4>✉️ Email Support</h4>
+        <p>support@nexatelconnect.com</p>
+        <p class="hours">Response within 24 hours</p>
+      </div>
+
+      <div class="contact-card">
+        <h4>💬 WhatsApp</h4>
+        <p>+33 06 39 98 00 00</p>
+        <p class="hours">Mon – Sat, 9am – 6pm</p>
+      </div>
+
+    </div>
+
   </main>
 
   <footer>
-    <p>© 2026 NexaTel Connect. Demo website for live chat showcase.</p>
+    <span>&copy; 2026 NexaTel Connect</span>
+    <div class="footer-links">
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+      <a href="#">Cookie settings</a>
+    </div>
   </footer>
 
   <!-- Sprinklr Live Chat Embed Script -->
@@ -313,5 +424,6 @@
     r.q.map(function(e){if("subscribeToUpdate"===e[0]&&e[1]&&"loadCompleted"===e[1].topic)return e[1].subscriber}).map(function(e){e&&e({response:{error:!0,errorPayload:{type:t,message:a}}})}))},
     a.getElementsByTagName("script")[0]);t.parentNode.insertBefore(e,t)},"loading"!==a.readyState?i():a.addEventListener("DOMContentLoaded",i))}();
   </script>
+
 </body>
 </html>
